@@ -1,7 +1,13 @@
 class ArticlesController < ApplicationController
+
+  def index
+    @articles = Article.all
+  end
+
   def new
     @article = Article.new
   end
+
   def create
     # render plain:params[:article].inspect
     # @article =  Article.new(article_params)
@@ -31,6 +37,16 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy(article_params)
+      flash[:notice] = "The record was deleted sucessfully"
+      redirect_to articles_path
+    else
+      flash[:notice] = "Was not possible delete the record, pls try again."
     end
   end
 
