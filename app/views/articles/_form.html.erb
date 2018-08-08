@@ -1,0 +1,32 @@
+<ul class="nav nav-pills">
+    <li role="presentation" class="active">
+        <%= link_to 'Back', articles_path %>
+    </li>
+</ul>
+
+<hr>
+
+<% if @article.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+      <ul>
+          <% @article.errors.full_messages.each {|msg| %>
+          <li><%= msg %></li>
+          <% } %>
+      </ul>
+  </div>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+<p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</p>
+<p>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
