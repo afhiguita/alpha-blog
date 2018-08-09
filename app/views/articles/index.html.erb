@@ -15,7 +15,7 @@
     <tr>
       <td><%= art.title %></td>
       <td><%= art.description %></td>
-      <td><%= link_to 'View', article_path(art)  %> | <%= link_to 'Edit', edit_article_path(art) %> | <%= link_to 'Delete', art, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'View', article_path(art)  %> | <%= link_to 'Edit', edit_article_path(art) %> | <%= link_to 'Remove', art, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% } %>
 </table>
