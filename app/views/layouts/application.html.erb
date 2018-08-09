@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AlphaBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My first Blog on Rails" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "This is a other blog create with rails. By Adrian Higuita" %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +12,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/messeges' %>
+
+
+  <header>
+    <%= render 'layouts/navigation' %>
+  </header>
+
+  <main role="main">
+    <%= render 'layouts/messages' %>
     <%= yield %>
+  </main>
   </body>
 </html>

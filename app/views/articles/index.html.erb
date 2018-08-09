@@ -1,12 +1,20 @@
-<h1>Listing all articles</h1>
+<% content_for :title do %>Articles
+<% end %>
+<div class="page-header">
+  <h1>Articles list<br>
+    <small>List of all article created</small>
+  </h1>
+</div>
 
-<table>
-  <tr>
-    <td><%= link_to 'New Article', new_article_path %></td>
-    <td><%= link_to 'Homepage', root_path %></td>
-  </tr>
-</table>
-<table>
+
+<!--navbar-->
+<ul class="nav nav-pills">
+  <li role="presentation">
+    <%= link_to 'New Article', new_article_path, class: '' %>
+  </li>
+</ul>
+
+<table class="table table-hover">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -16,8 +24,10 @@
     <tr>
       <td><%= art.title %></td>
       <td><%= art.description %></td>
-      <td><%= link_to 'View', article_path(art) %> | <%= link_to 'Edit', edit_article_path(art) %>
-        | <%= link_to 'Remove', article_path(art), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td>
+        <%= link_to 'View', article_path(art), class: "btn btn-default" %>
+        <%= link_to 'Edit', edit_article_path(art), class: "btn btn-default" %>
+        <%= link_to 'Remove', article_path(art), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %></td>
     </tr>
   <% } %>
 </table>
