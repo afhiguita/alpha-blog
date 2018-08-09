@@ -3,6 +3,7 @@
 <table>
   <tr>
     <td><%= link_to 'New Article', new_article_path %></td>
+    <td><%= link_to 'Homepage', root_path %></td>
   </tr>
 </table>
 <table>
@@ -15,7 +16,8 @@
     <tr>
       <td><%= art.title %></td>
       <td><%= art.description %></td>
-      <td><%= link_to 'View', article_path(art)  %> | <%= link_to 'Edit', edit_article_path(art) %> | <%= link_to 'Remove', art, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to 'View', article_path(art) %> | <%= link_to 'Edit', edit_article_path(art) %>
+        | <%= link_to 'Remove', article_path(art), method: :delete, data: {confirm: 'Are you sure?'} %></td>
     </tr>
   <% } %>
 </table>
