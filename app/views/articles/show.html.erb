@@ -1,10 +1,20 @@
-<h1 class="page-header">Article title<br>
-  <small><%= @article.title %></small>
-</h1>
+<% content_for :title do %> <%= @article.class.name %> | <%= @article.title %>
+<% end %>
+<nav class="nav navbar">
+  <div class="container-fluid">
+    <h1 class="page-header">
+      <%= @article.class.name %>
+      <br>
+      <small><%= @article.title %></small>
+      <div class="navbar-right">
+        <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary'; %>
+        <%= link_to 'Remove', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+        <%= link_to 'Back', articles_path, class: 'btn btn-warning' %>
+      </div>
+    </h1>
+  </div>
+</nav>
 
-<p class="lead">
+<div class="well">
   <%= @article.description %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary'; %>
-<%= link_to 'Back to list', articles_path, class: 'btn btn-default'; %>
+</div>

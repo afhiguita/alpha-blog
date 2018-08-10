@@ -1,21 +1,4 @@
-<ul class="nav nav-pills">
-    <li role="presentation" class="active">
-        <%= link_to 'Back', articles_path %>
-    </li>
-</ul>
-
-<hr>
-
-<% if @article.errors.any? %>
-  <div class="alert alert-danger" role="alert">
-    <ul>
-      <% @article.errors.full_messages.each {|msg| %>
-        <li><%= msg %></li>
-      <% } %>
-    </ul>
-  </div>
-<% end %>
-
+<%= render 'shared/errors', obj: @article %>
 
 <%= form_for @article, html: {role: 'form'} do |f| %>
   <div class="form-group">

@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     if @article.destroy
-      flash[:notice] = "The record was deleted sucessfully"
+      flash[:danger] = "The record was deleted sucessfully"
       redirect_to articles_path
     else
       flash[:notice] = "Was not possible delete the record, pls try again."
