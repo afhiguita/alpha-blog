@@ -1,33 +1,26 @@
 <% content_for :title do %>Articles
 <% end %>
 <div class="page-header">
-  <h1>Articles list<br>
-    <small>List of all article created</small>
+  <h1>Article list<br>
+    <small>List of all articles created</small>
   </h1>
 </div>
 
-
-<!--navbar-->
-<ul class="nav nav-pills">
-  <li role="presentation">
-    <%= link_to 'New Article', new_article_path, class: '' %>
-  </li>
-</ul>
-
-<table class="table table-hover">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Actions</th>
-  </tr>
-  <% @articles.each {|art|  %>
-    <tr>
-      <td><%= art.title %></td>
-      <td><%= art.description %></td>
-      <td>
-        <%= link_to 'View', article_path(art), class: "btn btn-default" %>
-        <%= link_to 'Edit', edit_article_path(art), class: "btn btn-default" %>
-        <%= link_to 'Remove', article_path(art), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %></td>
-    </tr>
-  <% } %>
-</table>
+<div class="row">
+  <% @articles.each do |a| %>
+    <div class="col-xs-6 col-sm-4">
+      <div class="well">
+        <h3><%= link_to a.title, article_path(a) %></h3>
+        <p>
+          <%= a.description %>
+        </p>
+        <hr>
+        <p>
+          <%= link_to 'View', article_path(a), class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_article_path(a), class: "btn btn-default" %>
+          <%= link_to 'Remove', article_path(a), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
