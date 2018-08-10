@@ -1,15 +1,10 @@
-<h1>Article information</h1>
+<h1 class="page-header">Article title<br>
+  <small><%= @article.title %></small>
+</h1>
 
-<h3>
-  <%= @article.title %>
-</h3>
-<p>
+<p class="lead">
   <%= @article.description %>
 </p>
 
-<table>
-  <tr>
-    <td><%= link_to 'Edit', edit_article_path(@article)  %></td>
-    <td><%= link_to 'Back to list', articles_path %></td>
-  </tr>
-</table>
+<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary'; %>
+<%= link_to 'Back to list', articles_path, class: 'btn btn-default'; %>

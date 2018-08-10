@@ -14,8 +14,15 @@ body {
 
 main {
   @extend .container;
-  margin-top: 30px; // accommodate the navbar
+  margin-top: 80px; // accommodate the navbar
 }
+
+.field_with_errors {
+  @extend .has-error
+}
+
+
+
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
