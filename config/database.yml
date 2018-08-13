@@ -11,14 +11,15 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: udbdvmsql01
-  password: AngelMio9.
-  host: localhost
+  username: dbo749734322
+  password: F3rnand0Higuita.
+  host: db749734322.db.1and1.com
+  port: 3306
 
 development:
   <<: *default
   # database: db/development.sqlite3
-  database: dbdvmsql01
+  database: db749734322
 
 
 # Warning: The database defined as "test" will be erased and
