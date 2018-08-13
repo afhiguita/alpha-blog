@@ -8,18 +8,28 @@ default: &default
   # adapter: sqlite3
   # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # timeout: 5000
+  # to MySQL, use:
+
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: dbo749734322
-  password: F3rnand0Higuita.
-  host: db749734322.db.1and1.com
-  port: 3306
+
+  # Remote connection with 1and1
+  # username: dbo749734322
+  # password: F3rnand0Higuita.
+  # host: db749734322.db.1and1.com
+  # port: 3306
+
+  # Local Connection
+  username: udbdvmsql01
+  password: AngelMio9.
+  host: localhost
 
 development:
   <<: *default
   # database: db/development.sqlite3
-  database: db749734322
+  # database: db749734322
+  database: dbdvmsql01
 
 
 # Warning: The database defined as "test" will be erased and
