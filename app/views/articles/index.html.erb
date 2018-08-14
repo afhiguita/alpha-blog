@@ -10,7 +10,7 @@
   <% @articles.each do |a| %>
     <div class="col-xs-6 col-sm-4">
       <div class="well">
-        <h3><%= link_to a.title, article_path(a) %></h3>
+        <h3><%= link_to a.title, article_path(a) %><br><small>By: <%= a.user.username %></small></h3>
         <p>
           <%= a.description %>
         </p>
