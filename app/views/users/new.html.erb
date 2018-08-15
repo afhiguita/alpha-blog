@@ -1,0 +1,14 @@
+<% content_for :title do %>Editing Article
+<% end %>
+<nav class="nav navbar">
+  <div class="container-fluid">
+    <div class="navbar-left">
+      <h1>New user</h1>
+    </div>
+    <div class="navbar-right h1">
+      <%= link_to 'Cancel', articles_path, class: 'btn btn-warning' %>
+    </div>
+  </div>
+</nav>
+
+<%= render 'users/form' %>

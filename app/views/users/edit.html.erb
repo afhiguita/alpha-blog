@@ -1,0 +1,14 @@
+<% content_for :title do %>Editing user (<%= @user.username %>)
+<% end %>
+<nav class="nav navbar">
+  <div class="container-fluid">
+    <div class="navbar-left">
+      <h1>Editing profile</h1>
+    </div>
+    <div class="navbar-right h1">
+      <%= link_to 'Back', article_path, class: 'btn btn-warning' %>
+    </div>
+  </div>
+</nav>
+
+<%= render 'users/form' %>

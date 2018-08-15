@@ -6,21 +6,4 @@
   </h1>
 </div>
 
-<div class="row">
-  <% @articles.each do |a| %>
-    <div class="col-xs-6 col-sm-4">
-      <div class="well">
-        <h3><%= link_to a.title, article_path(a) %><br><small>By: <%= a.user.username %> | <%= time_ago_in_words(a.created_at) %> ago, Last updated: <%= time_ago_in_words(a.updated_at) %> ago</small></h3>
-        <p>
-          <%= a.description %>
-        </p>
-        <hr>
-        <p>
-          <%= link_to 'View', article_path(a), class: "btn btn-sm btn-default" %>
-          <%= link_to 'Edit', edit_article_path(a), class: "btn btn-sm btn-default" %>
-          <%= link_to 'Remove', article_path(a), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-default" %>
-        </p>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'articles/article', obj:@articles %>
